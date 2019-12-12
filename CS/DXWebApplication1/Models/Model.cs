@@ -9,7 +9,7 @@ using System.Web;
 namespace Models {
     public class BatchEditRepository
     {
-        public static List<GridDataItem> GridData 
+        public static List<GridDataItem> GridData
         {
             get
             {
