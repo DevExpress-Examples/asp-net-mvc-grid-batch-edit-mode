@@ -1,0 +1,48 @@
+﻿@{
+    var grid = Html.DevExpress().GridView(settings => {
+        settings.Name = "grid";
+        settings.KeyFieldName = "PersonID";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartial" };
+
+        settings.SettingsEditing.Mode = GridViewEditingMode.Batch;
+        settings.SettingsEditing.BatchUpdateRouteValues = new { Controller = "Home", Action = "BatchEditingUpdateModelPerson" };
+
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.CommandColumn.ShowEditButton = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+
+        settings.Columns.Add("FirstName");
+        settings.Columns.Add("MiddleName");
+        settings.Columns.Add("LastName");
+
+        settings.Columns.Add(c => {
+            c.FieldName = "Age";
+            c.ColumnType = MVCxGridViewColumnType.SpinEdit;
+            c.Width = 50;
+        });
+
+        settings.Columns.Add(c => {
+            c.FieldName = "Status";
+            c.ColumnType = MVCxGridViewColumnType.ComboBox;
+            c.EditorProperties().ComboBox(cb => {
+                cb.Items.Add("Active", 1);
+                cb.Items.Add("Disabled", 2);
+            });
+
+            c.Width = 90;
+        });
+
+        settings.CellEditorInitialize = (s, e) => {
+            ASPxEdit editor = (ASPxEdit)e.Editor;
+            editor.ValidationSettings.Display = Display.Dynamic;
+        };
+
+        settings.SettingsBehavior.AllowFocusedRow = true;
+        settings.SettingsPager.Visible = true;
+    });
+    if(ViewData["EditError"] != null) {
+        grid.SetEditErrorText((string)ViewData["EditError"]);
+    }
+}
+@grid.Bind(Model).GetHtml()

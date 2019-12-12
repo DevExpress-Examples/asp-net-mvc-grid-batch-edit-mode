@@ -1,19 +1,3 @@
-﻿// Developer Express Code Central Example:
-// GridView - A simple Batch Editing implementation
-// 
-// This example illustrates a simple implementation of a new ASPxGridView Batch
-// Editing Mode functionality available starting with version 13.2:
-// ASP.NET
-// WebForms & MVC: GridView Batch Edit (What's new in 13.2)
-// (https://community.devexpress.com/blogs/aspnet/archive/2013/12/16/asp-net-webforms-amp-mvc-gridview-batch-edit-what-39-s-new-in-13-2.aspx)
-// This
-// example is a standalone DB-independent solution of the online Batch Editing
-// (http://demos.devexpress.com/MVCxGridViewDemos/Editing/BatchEditing) demo. Refer
-// to the demo's Description for more information.
-// 
-// You can find sample updates and versions for different programming languages here:
-// http://www.devexpress.com/example=E5046
-
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -26,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("DXWebApplication1")]
-[assembly: AssemblyCopyright("Copyright ? 2014")]
+[assembly: AssemblyCopyright("Copyright ? 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -36,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("242ed59c-aec2-4233-87a8-9e053a8d64bf")]
+[assembly: Guid("391e09ae-de21-4a5e-8d0b-f8639c02a5cf")]
 
 // Version information for an assembly consists of the following four values:
 //

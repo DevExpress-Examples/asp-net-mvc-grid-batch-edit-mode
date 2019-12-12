@@ -1,44 +1,45 @@
-﻿using System;
+﻿using DevExpress.Web.Mvc;
+using DXWebApplication1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using DevExpress.Web.Mvc;
-using Models;
 
-namespace GridViewBatchEdit.Controllers {
-    public class HomeController : Controller {
+namespace DXWebApplication1.Controllers
+{
+    public class HomeController : Controller
+    {
+        // GET: Home
         public ActionResult Index() {
-            return View();
+            return View(PersonsList.GetPersons());
         }
 
-        [ValidateInput(false)]
         public ActionResult GridViewPartial() {
-            return PartialView("_GridViewPartial", BatchEditRepository.GridData);
+            return PartialView(PersonsList.GetPersons());
         }
 
         [HttpPost, ValidateInput(false)]
-        public ActionResult BatchUpdatePartial(MVCxGridViewBatchUpdateValues<GridDataItem, int> batchValues)
-        {
-            foreach (var item in batchValues.Insert)
-            {
-                if (batchValues.IsValid(item))
-                    BatchEditRepository.InsertNewItem(item, batchValues);
+        public ActionResult BatchEditingUpdateModelPerson(MVCxGridViewBatchUpdateValues<Person, int> batchValues) {
+            foreach(var person in batchValues.Update) {
+                if(batchValues.IsValid(person))
+                    PersonsList.UpdatePerson(person);
                 else
-                    batchValues.SetErrorText(item, "Correct validation errors");
+                    batchValues.SetErrorText(person, "Correct validation errors");
             }
-            foreach (var item in batchValues.Update)
-            {
-                if (batchValues.IsValid(item))
-                    BatchEditRepository.UpdateItem(item, batchValues);
+
+            foreach(var person in batchValues.Insert) {
+                if(batchValues.IsValid(person))
+                    PersonsList.AddPerson(person);
                 else
-                    batchValues.SetErrorText(item, "Correct validation errors");
+                    batchValues.SetErrorText(person, "Correct validation errors");
             }
-            foreach (var itemKey in batchValues.DeleteKeys)
-            {
-                BatchEditRepository.DeleteItem(itemKey, batchValues);
+
+            foreach (var personID in batchValues.DeleteKeys) {
+                PersonsList.DeletePerson(personID);
             }
-            return PartialView("_GridViewPartial", BatchEditRepository.GridData);
+            return PartialView("GridViewPartial", PersonsList.GetPersons());
         }
+
     }
 }
