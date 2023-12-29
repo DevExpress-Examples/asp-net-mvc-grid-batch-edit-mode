@@ -12,9 +12,6 @@
 * [Index.cshtml](./CS/DXWebApplication1/Views/Home/Index.cshtml)
 <!-- default file list end -->
 # GridView - A simple Batch Editing implementation
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128549435/)**
-<!-- run online end -->
 
 
 <p>This example illustrates a simple implementation of a new ASPxGridView Batch Editing Mode functionality available starting with version 13.2:<br />
