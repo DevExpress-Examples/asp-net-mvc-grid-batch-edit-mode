@@ -4,9 +4,6 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 # Grid View for ASP.NET MVC - Implement the batch edit functionality
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128549435/)**
-<!-- run online end -->
 
 This example demonstrates how to enable the grid's batch edit mode and use a controller action method to update grid data.
 
