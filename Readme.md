@@ -57,7 +57,7 @@ public ActionResult BatchEditingUpdateModelPerson(MVCxGridViewBatchUpdateValues<
 * [Batch Editing](https://demos.devexpress.com/MVCxGridViewDemos/Editing/BatchEditing)
 * [Grid View for ASP.NET Web Forms - A simple batch edit implementation](https://github.com/DevExpress-Examples/aspxgridview-simple-batch-editing-implementation)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-mvc-grid-batch-edit-mode&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-mvc-grid-batch-edit-mode&~~~was_helpful=no)
 
